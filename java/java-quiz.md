@@ -1402,3 +1402,97 @@ public enum Direction {
 - [ ] try-finally-close
 - [x] try-with-resources
 - [ ] try-catch-close
+
+#### Q105. what code should go in line 3?
+```
+1: class main {
+2:	public static void main(String[] args){
+3:		
+4:	  array[0] = new int []{1,2,3};
+5:        array[1] = new int []{4,5,6};
+6:        array[2] = new int []{7,8,9};
+7:        for(int i=0;i<3;i++){
+8:            System.out.print(array[i][1]);
+9:        }
+10:    }
+11: }
+```
+- [ ] int[][] array = new int [][];
+- [x] int[][] array = new int [3][3];
+- [ ] int[][] array = [][];
+- [ ] int[][] array = new int [2][2];
+
+#### Q106. What is the problem in this code
+```
+public class Program {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<String>(Arrays.asList("a","b","c"));
+        for (String value: list){
+            if(value.equals("a")){
+                list.remove(value);
+            }
+        }
+        System.out.println(list);
+    }
+}
+```
+- [ ] The list interface does not allow an argument of type String to be passed to the remove method
+- [ ] Strings should be compared using == instead of equals
+- [x] Modifying a collection while iterating through it can throw a ConcurrentModificationException
+- [ ] ArrayList does not implement the List interface
+
+#### Q107. What will be printed?
+```
+public class Berries {
+    String berry = "blue";
+    public static void main(String[] args) {
+        new Berries().juicy("straw");
+    }
+    void juicy(String berry){
+        this.berry = "rasp";
+        System.out.println(berry+"berry");
+    }
+}
+```
+- [ ] blueberry
+- [ ] raspberry
+- [x] strawberry
+- [ ] rasp
+
+#### Q108. Which keyword would not be allowed here?
+```
+class Unicorn{
+	_____ Unicorn(){}
+}
+```
+- [ ] public
+- [ ] protected
+- [x] static
+- [ ] void
+
+#### Q109. Is this an example of method overloading or overriding?
+```
+class Car{
+    public void accelerate(){}
+}
+class Lambo extends Car{
+    public void accelerate(int speedLimit){}
+    public void accelerate(){}
+}
+```
+- [x] overloading
+- [ ] overriding
+- [ ] both
+- [ ] neither
+
+#### Q110. How do you convert this method into a lambda expression?
+```
+public int square(int x){
+        return  x*x;
+    }
+    
+```
+- [ ] Function<Integer,Integer> squareLambda = (int x) -> {x * x};
+- [ ] Function<Integer,Integer> squareLambda = () -> (return x * x);
+- [ ] Function<Integer,Integer> squareLambda = x -> return x * x;
+- [x] Function<Integer,Integer> squareLambda = x -> x*x;
